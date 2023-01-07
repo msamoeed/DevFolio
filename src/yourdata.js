@@ -18,6 +18,11 @@ import expressIcon from './images/express.png'
 import mongodbIcon from './images/mongoDb.png'
 import adobeIcon from './images/adobe.png'
 
+
+import derbyIcon from './images/clients/derby-logo.png'
+import townIcon from './images/clients/madawaska.png'
+import fiberforce from './images/clients/fiberforce.png'
+
 export default {
   //(Please Do Not Remove The comma(,) after every variable)
   //Change The Website Template
@@ -194,7 +199,8 @@ export default {
   contactSubHeading: "Let's create your next experience together",
   social: [
     // Add Or Remove The Link Accordingly
-    { img: githubIcon, url: "https://github.com/msamoeed" },
+    { img: githubIcon, 
+      url: "https://github.com/msamoeed" },
     {
       img: codepenIcon,
       url: "https://www.codepen.com/",
@@ -208,6 +214,65 @@ export default {
       url: "https://www.instagram.com/msamoeed",
     },
   ],
+
+
+  testimonials  : [
+    {
+      img : "https://media.licdn.com/dms/image/C4D03AQG4Baof8Jk2Ug/profile-displayphoto-shrink_800_800/0/1612320842759?e=1678320000&v=beta&t=ikskiMdcN13JTaSciUBezqHivbkfhHQnt8B1xljuB20",
+      name : "Jason Boucher",
+      designation : "Business System Analyst at Twin Rivers Paper Company",
+      review : "Softsol team were the lead on a project I hired them for. The project involved creating a Flutter App and Website for an Ice Fishing Derby. During this Project Abdul Moeed was extremely easy to work with and was extremely knowledgeable with the development environment. While working on this project I also had him help me with other projects that a failed developer had worked on. He was more then happy to help me out and aid an amazing job. I would highly recommend working with them. The project he helped me save would be dead today if it wasn't for his assistance, and the current project he is working on for me is already turning out great!"
+    },
+    {
+      img : "https://media.licdn.com/dms/image/C4D03AQEO_0-dvO4v9g/profile-displayphoto-shrink_200_200/0/1516518252366?e=1678320000&v=beta&t=4CZcrXjbDCJ9l6PMsgGhG_mOECpBDXaX2Fb3JHqoKnw",
+      name : "Grady Lonigan",
+      designation : "Concrete Construction Innovation, Development, Rehabilitation & Restoration",
+      review : "Softsol and thier team did excellent and professional work from start to finish. They custom built a mobile app for us meeting all of our needs. Thanks again Abdul, and I highly recommend"
+    }, 
+    {
+      img : "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1280px-Flag_of_England.svg.png",
+      name : "Plnielsen",
+      designation : "Writer",
+      review : "Fantastic! The app is just as I hoped and every idea that was possible has been accommodated. Delivered over and above, including time spent on the project. Thoroughly recommend."
+    }, 
+   
+  ],
+
+  clients : [
+
+{
+  name : "Long Lake Ice Fishing Derby",
+  img : derbyIcon,
+},
+{
+  name : "FiberForce",
+  img : fiberforce,
+}
+,
+{
+  name : "Town of Madawaska",
+  img : townIcon,
+}
+  ],
+
+
+  services : [
+    {
+      image  : "https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png" ,
+      name : "Flutter",
+      description : "Flutter is a cross-platform mobile application development framework created by Google. It is used to develop applications for Android, iOS, Linux, Mac, and Windows."
+    },
+    {
+      image  : "https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png" ,
+      name : "IOS",
+      description : "IOS App Development for Iphone and Ipad"
+    },
+    {
+      image  : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/2346px-Android_logo_2019_%28stacked%29.svg.png" ,
+      name : "Android",
+      description : "Android App Development for Android Phones and Tablets"
+    }
+  ]
 
   // End Contact Section ---------------
 }

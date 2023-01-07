@@ -29,7 +29,7 @@
         </a>
         <nav
           class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
-        >
+        > 
           <a
             href="#home"
             class="mr-5 font-bold lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
@@ -126,312 +126,208 @@ Thank you for considering Softsol for your software development needs. We look f
     </Transition>
   </section>
 
-  <!-- Portfolio Section  -->
-  <div
-    class="container mt-40 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
-    id="portfolio"
-  >
-    <!-- Portfolio Transition -->
-    <Transition
-      transitions="transition transform"
-      inTransition="ease-out duration-1000"
-      inState="opacity-0 -translate-x-16"
-      onState="opacity-100 translate-x-0"
-    >
-      <section class="w-full text-center">
-        <h2
-          id="work"
-          class="secondary-title md:text-left text-4xl font-bold mb-6"
-        >
-          Portfolio
-        </h2>
-        <p class="section-paragraph md:text-left text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper
-          nulla nunc quis molestie volutpat elementum at. Ultrices ipsum, enim
-          cursus lorem ac. Orci maecenas praesent arcu eget orci est orci
-          nullam. Leo purus est pellentesque massa at tortor, est. Aliquet
-          pulvinar a mattis sagittis. Suspendisse porta id elementum, massa.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          <div class="img-wrapper relative overflow-hidden">
-            <img
-              src="./wireframes.avif"
-              class="w-full bg-nav h-36 lg:h-72 object-cover hover:scale-110 transition duration-300 ease-in-out"
-              alt=""
-            />
-          </div>
-          <div class="img-wrapper relative overflow-hidden">
-            <img
-              src="./macbook.avif"
-              class="w-full bg-nav h-36 lg:h-72 object-cover hover:scale-110 transition duration-300 ease-in-out"
-              alt=""
-            />
-          </div>
-          <div class="img-wrapper relative overflow-hidden">
-            <img
-              src="./ipad.avif"
-              class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover hover:scale-110 transition duration-300 ease-in-out"
-              alt=""
-            />
-          </div>
-          <div class="img-wrapper relative overflow-hidden">
-            <img
-              src="./mac.avif"
-              class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover object-center hover:scale-110 transition duration-300 ease-in-out"
-              alt=""
-            />
-          </div>
-          <div class="img-wrapper relative overflow-hidden">
-            <img
-              src="./lg.avif"
-              class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover object-center hover:scale-110 transition duration-300 ease-in-out"
-              alt=""
-            />
-          </div>
-          <div class="img-wrapper relative overflow-hidden">
-            <img
-              src="./hp.avif"
-              class="w-full hidden md:block bg-nav h-36 lg:h-72 object-cover object-center hover:scale-110 transition duration-300 ease-in-out"
-              alt=""
-            />
-          </div>
-        </div>
-      </section>
-    </Transition>
-  </div>
 
-
- 
-                    
-  <div class="container px-8 mx-auto sm:px-12 lg:px-20 tails-selected-element" contenteditable="true">
-    <h1 class="text-sm font-bold tracking-wide text-center text-gray-800 uppercase mb-7">Technology Stack</h1>
-    <div class="flex grid items-center justify-center grid-cols-4 grid-cols-12 gap-y-8">
-      {#each data.skills as skill, i}
-        <div class="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">
-            <img src={skill.img} alt="Disney Plus" class="block object-contain h-12">
+  <section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+        <h2 class="mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 lg:mb-16 dark:text-white md:text-4xl">You’ll be in good company</h2>
+        <div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-3 dark:text-gray-400">
+          {#each data.clients as client, i }
+            <a href="#" class="flex justify-center items-center self-center">
+                <img src={client.img} alt={client.name} class="w-36 h-25"  />          
+            </a>
+       {/each}
         </div>
-        {/each}
-       
     </div>
-</div>
+</section>
+
+  <!-- //Testimonials -->
+
+  <section class="bg-white">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto max-w-xl text-center">
+        <h2 class="text-4xl fon font-bold tracking-tight sm:text-5xl text-black">
+          Read trusted reviews from our customers
+        </h2>
+  
+        <p class="text-gring-offset-warm-gray-500 mx-auto mt-4 max-w-lg text-black">
+          At Softsol, we are committed to providing top-notch products and services to our customers. But don't just take our word for it - see what our satisfied customers have to say about their experiences with us! Our customer testimonials are a testament to the quality and value of our tech offerings. From software to hardware to services, we've earned the trust and praise of countless users. Read through their reviews to get a sense of what you can expect when you choose Softsol for your tech needs
+        </p>
+      </div>
 
 
-  <!-- Clients Section -->
-  <div
-    class="container mt-64 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"
-    id="clients"
-  >
-    <!-- Clients Transition -->
-    <Transition
+      <Transition
       transitions="transition transform"
       inTransition="ease-out duration-1000"
       inState="opacity-0 -translate-y-16"
       onState="opacity-100 translate-x-0"
     >
-      <section class="w-full">
-        <h2
-          id="clients"
-          class="secondary-title md:text-left text-4xl font-bold mb-6 text-white"
-        >
-          Clients
-        </h2>
-        <p class="section-paragraph md:text-left text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper
-          nulla nunc quis molestie volutpat elementum at. Ultrices ipsum, enim
-          cursus lorem ac. Orci maecenas praesent arcu eget orci est orci
-          nullam. Leo purus est pellentesque massa at tortor, est. Aliquet
-          pulvinar a mattis sagittis. Suspendisse porta id elementum, massa.
-        </p>
-
-        <!-- Clients -->
-        <div class="space-y-12 my-16">
-          <div
-            class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap hover:scale-110 transition duration-300 ease-in-out"
+      <div
+         class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16 lg:grid-cols-3"
+      >
+      {#each data.testimonials as testimonial, i}
+        <div>
+          <img
+            alt="Woman"
+            src={testimonial.img}
+            class="mx-auto h-24 w-24 rounded-full object-cover shadow-xl"
+          />
+  
+          <blockquote
+            class="-mt-6 flex flex-col justify-between rounded-lg p-12 text-center shadow-xl"
           >
-            <!-- Client logo -->
-            <div class="mb-6 lg:mb-0">
+            <p class="text-lg font-bold text-gray-700">{testimonial.name}</p>
+            <p class="mt-1 text-xs font-medium text-gray-500">
+              {testimonial.designation}
+            </p>
+            <p class="mt-4 text-sm text-gray-500">
+              {testimonial.review}
+            </p>
+  
+            <div class="mt-8 flex justify-center gap-0.5 text-green-500">
               <svg
-                width="80"
-                height="96"
-                viewBox="0 0 80 96"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  d="M66.6983 92.1599C61.5487 97.2095 55.867 96.4223 50.4513 94.0415C44.6936 91.6127 39.4299 91.4591 33.3492 94.0415C25.7767 97.3439 21.7577 96.3839 17.1972 92.1599C-8.55106 65.3759 -4.75058 24.5759 24.5131 23.0399C31.6105 23.4239 36.5796 27.0047 40.7601 27.3023C46.9739 26.0255 52.9216 22.3679 59.5724 22.8479C67.5629 23.5007 73.5392 26.6879 77.5297 32.4191C61.0926 42.4031 64.9881 64.2911 80.0855 70.4351C77.0641 78.4511 73.1876 86.3711 66.6888 92.2271L66.6983 92.1599ZM40.19 22.7519C39.4204 10.8479 48.9691 1.05595 59.9525 0.0959473C61.4632 13.8239 47.6009 24.0959 40.19 22.7519Z"
-                  fill="white"
-                /></svg
+                class="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-            </div>
-
-            <!-- Client info -->
-            <div
-              class="flex flex-wrap justify-center text-center lg:text-left lg:block"
-            >
-              <h3 class="text-white text-3xl font-semibold">Company, inc.</h3>
-
-              <div
-                class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 mt-6 mb-8"
-              >
-                <div class="badge">UI/UX</div>
-                <div class="badge">Front-end Development</div>
-                <div class="badge">OpenSource</div>
-              </div>
-
-              <p class="text-secondary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Ullamcorper nulla nunc quis molestie volutpat elementum at.
-                Ultrices ipsum, enim cursus lorem ac. Orci maecenas praesent
-                arcu eget orci est orci nullam. Leo purus est pellentesque massa
-                at tortor, est. Aliquet pulvinar a mattis sagittis. Suspendisse
-                porta id elementum, massa.
-              </p>
-              <a
-                class="mt-10 text-gray-50 inline-flex items-center font-bold"
-                href="#"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div
-            class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap hover:scale-110 transition duration-300 ease-in-out"
-          >
-            <!-- Client logo -->
-            <div class="mb-6 lg:mb-0">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
               <svg
-                width="80"
-                height="96"
-                viewBox="0 0 80 96"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  d="M66.6983 92.1599C61.5487 97.2095 55.867 96.4223 50.4513 94.0415C44.6936 91.6127 39.4299 91.4591 33.3492 94.0415C25.7767 97.3439 21.7577 96.3839 17.1972 92.1599C-8.55106 65.3759 -4.75058 24.5759 24.5131 23.0399C31.6105 23.4239 36.5796 27.0047 40.7601 27.3023C46.9739 26.0255 52.9216 22.3679 59.5724 22.8479C67.5629 23.5007 73.5392 26.6879 77.5297 32.4191C61.0926 42.4031 64.9881 64.2911 80.0855 70.4351C77.0641 78.4511 73.1876 86.3711 66.6888 92.2271L66.6983 92.1599ZM40.19 22.7519C39.4204 10.8479 48.9691 1.05595 59.9525 0.0959473C61.4632 13.8239 47.6009 24.0959 40.19 22.7519Z"
-                  fill="white"
-                /></svg
+                class="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-            </div>
-
-            <!-- Technology Stack -->
-
-           
-                 
-                 
-
-
-            <!-- Client info -->
-            <div
-              class="flex flex-wrap justify-center text-center lg:text-left lg:block"
-            >
-              <h3 class="text-white text-3xl font-semibold">FiberForce</h3>
-
-              <div
-                class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 mt-6 mb-8"
-              >
-                <div class="badge">UI/UX</div>
-                <div class="badge">Front-end Development</div>
-                <div class="badge">Fluter</div>
-                <div class="badge">Firebase</div>
-                <div class="badge">Mobile Application Develpment</div>
-              </div>
-
-              <p class="text-secondary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Ullamcorper nulla nunc quis molestie volutpat elementum at.
-                Ultrices ipsum, enim cursus lorem ac. Orci maecenas praesent
-                arcu eget orci est orci nullam. Leo purus est pellentesque massa
-                at tortor, est. Aliquet pulvinar a mattis sagittis. Suspendisse
-                porta id elementum, massa.
-              </p>
-              <a
-                class="mt-10 text-gray-50 inline-flex items-center font-bold"
-                href="#"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div
-            class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap hover:scale-110 transition duration-300 ease-in-out"
-          >
-            <!-- Client logo -->
-            <div class="mb-6 lg:mb-0">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
               <svg
-                width="80"
-                height="96"
-                viewBox="0 0 80 96"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  d="M66.6983 92.1599C61.5487 97.2095 55.867 96.4223 50.4513 94.0415C44.6936 91.6127 39.4299 91.4591 33.3492 94.0415C25.7767 97.3439 21.7577 96.3839 17.1972 92.1599C-8.55106 65.3759 -4.75058 24.5759 24.5131 23.0399C31.6105 23.4239 36.5796 27.0047 40.7601 27.3023C46.9739 26.0255 52.9216 22.3679 59.5724 22.8479C67.5629 23.5007 73.5392 26.6879 77.5297 32.4191C61.0926 42.4031 64.9881 64.2911 80.0855 70.4351C77.0641 78.4511 73.1876 86.3711 66.6888 92.2271L66.6983 92.1599ZM40.19 22.7519C39.4204 10.8479 48.9691 1.05595 59.9525 0.0959473C61.4632 13.8239 47.6009 24.0959 40.19 22.7519Z"
-                  fill="white"
-                /></svg
+                class="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-            </div>
-
-            <!-- Client info -->
-            <div
-              class="flex flex-wrap justify-center text-center lg:text-left lg:block"
-            >
-              <h3 class="text-white text-3xl font-semibold">Company, inc.</h3>
-
-              <div
-                class="w-full lg:w-auto flex flex-wrap justify-center lg:justify-start gap-3 mt-6 mb-8"
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-                <div class="badge">UI/UX</div>
-                <div class="badge">Front-end Development</div>
-                <div class="badge">OpenSource</div>
-              </div>
-
-              <p class="text-secondary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Ullamcorper nulla nunc quis molestie volutpat elementum at.
-                Ultrices ipsum, enim cursus lorem ac. Orci maecenas praesent
-                arcu eget orci est orci nullam. Leo purus est pellentesque massa
-                at tortor, est. Aliquet pulvinar a mattis sagittis. Suspendisse
-                porta id elementum, massa.
-              </p>
-              <a
-                class="mt-10 text-gray-50 inline-flex items-center font-bold"
-                href="#"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
             </div>
-          </div>
-        </div>
-      </section>
+          </blockquote>
+        </div> 
+        {/each}
+      </div>
     </Transition>
-  </div>
+    </div>
+  </section>
+
+  
+
+
+  <section class="bg-gray-900 text-white">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-lg text-center">
+        <h2 class="text-3xl font-bold sm:text-4xl">Kickstart your digital journey</h2>
+  
+        <p class="mt-4 text-gray-300">
+          Our IT company is dedicated to helping businesses of all sizes meet their technology needs. We offer a wide range of services to help our clients achieve their goals, including custom software development, IT consulting, network support, cloud services, and security. Our team of experienced professionals has the skills and expertise to design, build, and maintain the systems and applications that are critical to the success of your business. We pride ourselves on our commitment to customer satisfaction, and we work closely with our clients to ensure that their technology needs are met in a timely and effective manner. 
+        </p>
+      </div>
+  
+      <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+        {#each data.services as service, i}
+        <a
+          class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+          href="/services/digital-campaigns"
+        >
+
+        <img
+        alt="Flutter"
+        src={service.image}
+        class="mx-auto h-32 w-34 object-cover shadow-xl"
+      />
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10 text-pink-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path
+              d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+            />
+          </svg> -->
+  
+          <h2 class="mt-4 text-xl font-bold text-white">{service.name}</h2>
+  
+          <p class="mt-1 text-sm text-gray-300">
+           {service.description}
+          </p>
+        </a>
+
+        {/each}
+  
+      
+      </div>
+  
+      <div class="mt-12 text-center">
+        <a
+          href="#"
+          class="mt-8 inline-flex items-center rounded border border-blue-600 bg-blue-600 px-8 py-3 text-white hover:bg-transparent focus:outline-none focus:ring active:text-pink-500"
+        >
+          <span class="text-sm font-medium"> Get Started </span>
+  
+          <svg
+            class="ml-3 h-5 w-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  
 
   <!-- Hire Me Section -->
   <div
