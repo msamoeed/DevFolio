@@ -2,23 +2,25 @@
   // @ts-nocheck
   import Transition from "svelte-class-transition";
   import Typewriter from "svelte-typewriter";
-  import data from  './yourdata'
-  import Testimonials from './Testimonials.svelte'
+
+  
   import {  db } from "./services/firebase";
   import { collectionData } from 'rxfire/firestore';
   import { startWith } from 'rxjs/operators';
-  import ServicesOffered from "./ServicesOffered.svelte";
-  import Clients from "./Clients.svelte";
+  //Components
+  import Testimonials from './components/homepage/Testimonials.svelte'
+  import ServicesOffered from "./components/homepage/ServicesOffered.svelte";
+  import Clients from "./components/homepage/Clients.svelte";
 
   //Get testimonials from firebase firestore about testimonials collection
   const querytestimonials = db.collection('testimonials')
   const testimonials = collectionData(querytestimonials).pipe(startWith([]));
 
-  //Get testimonials from firebase firestore about services collection
+  //Get services from firebase firestore about services collection
   const queryservices = db.collection('services')
   const services = collectionData(queryservices).pipe(startWith([]));
 
-  //Get testimonials from firebase firestore about clients collection
+  //Get clients from firebase firestore about clients collection
   const queryclients = db.collection('clients')
   const clients = collectionData(queryclients).pipe(startWith([]));
 
@@ -153,7 +155,6 @@ Thank you for considering Softsol for your software development needs. We look f
 
   <!-- Clients Section -->
   <Clients {clients} />
-
   <!-- //Testimonials -->
   <Testimonials {testimonials} />
   <!-- Services Section -->
