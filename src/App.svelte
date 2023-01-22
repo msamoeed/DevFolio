@@ -3,6 +3,30 @@
   import Transition from "svelte-class-transition";
   import Typewriter from "svelte-typewriter";
   import data from  './yourdata'
+  import Testimonials from './Testimonials.svelte'
+  import {  db } from "./services/firebase";
+  import { collectionData } from 'rxfire/firestore';
+  import { startWith } from 'rxjs/operators';
+  import ServicesOffered from "./ServicesOffered.svelte";
+  import Clients from "./Clients.svelte";
+
+  //Get testimonials from firebase firestore about testimonials collection
+  const querytestimonials = db.collection('testimonials')
+  const testimonials = collectionData(querytestimonials).pipe(startWith([]));
+
+  //Get testimonials from firebase firestore about services collection
+  const queryservices = db.collection('services')
+  const services = collectionData(queryservices).pipe(startWith([]));
+
+  //Get testimonials from firebase firestore about clients collection
+  const queryclients = db.collection('clients')
+  const clients = collectionData(queryclients).pipe(startWith([]));
+
+
+  
+
+ 
+  
 </script>
 
 <main
@@ -70,11 +94,11 @@
         id="home"
       >
         <div class="grid justify-center items-center order-1 col-span-1">
-          <img
+          <!-- <img
             class="h-40 lg:h-80 md:h-64 rounded-full"
             src="./profile-pic.avif"
             alt=""
-          />
+          /> -->
         </div>
         <div class="mt-8 md:mt-0 lg:justify-end col-span-2">
           <h1
@@ -127,204 +151,16 @@ Thank you for considering Softsol for your software development needs. We look f
   </section>
 
 
-  <section class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-        <h2 class="mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 lg:mb-16 dark:text-white md:text-4xl">You’ll be in good company</h2>
-        <div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-3 dark:text-gray-400">
-          {#each data.clients as client, i }
-            <a href="#" class="flex justify-center items-center self-center">
-                <img src={client.img} alt={client.name} class="w-36 h-25"  />          
-            </a>
-       {/each}
-        </div>
-    </div>
-</section>
+  <!-- Clients Section -->
+  <Clients {clients} />
 
   <!-- //Testimonials -->
-
-  <section class="bg-white">
-    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-      <div class="mx-auto max-w-xl text-center">
-        <h2 class="text-4xl fon font-bold tracking-tight sm:text-5xl text-black">
-          Read trusted reviews from our customers
-        </h2>
-  
-        <p class="text-gring-offset-warm-gray-500 mx-auto mt-4 max-w-lg text-black">
-          At Softsol, we are committed to providing top-notch products and services to our customers. But don't just take our word for it - see what our satisfied customers have to say about their experiences with us! Our customer testimonials are a testament to the quality and value of our tech offerings. From software to hardware to services, we've earned the trust and praise of countless users. Read through their reviews to get a sense of what you can expect when you choose Softsol for your tech needs
-        </p>
-      </div>
+  <Testimonials {testimonials} />
+  <!-- Services Section -->
+  <ServicesOffered {services} />
 
 
-      <Transition
-      transitions="transition transform"
-      inTransition="ease-out duration-1000"
-      inState="opacity-0 -translate-y-16"
-      onState="opacity-100 translate-x-0"
-    >
-      <div
-         class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-16 lg:grid-cols-3"
-      >
-      {#each data.testimonials as testimonial, i}
-        <div>
-          <img
-            alt="Woman"
-            src={testimonial.img}
-            class="mx-auto h-24 w-24 rounded-full object-cover shadow-xl"
-          />
   
-          <blockquote
-            class="-mt-6 flex flex-col justify-between rounded-lg p-12 text-center shadow-xl"
-          >
-            <p class="text-lg font-bold text-gray-700">{testimonial.name}</p>
-            <p class="mt-1 text-xs font-medium text-gray-500">
-              {testimonial.designation}
-            </p>
-            <p class="mt-4 text-sm text-gray-500">
-              {testimonial.review}
-            </p>
-  
-            <div class="mt-8 flex justify-center gap-0.5 text-green-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-            </div>
-          </blockquote>
-        </div> 
-        {/each}
-      </div>
-    </Transition>
-    </div>
-  </section>
-
-  
-
-
-  <section class="bg-gray-900 text-white">
-    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-lg text-center">
-        <h2 class="text-3xl font-bold sm:text-4xl">Kickstart your digital journey</h2>
-  
-        <p class="mt-4 text-gray-300">
-          Our IT company is dedicated to helping businesses of all sizes meet their technology needs. We offer a wide range of services to help our clients achieve their goals, including custom software development, IT consulting, network support, cloud services, and security. Our team of experienced professionals has the skills and expertise to design, build, and maintain the systems and applications that are critical to the success of your business. We pride ourselves on our commitment to customer satisfaction, and we work closely with our clients to ensure that their technology needs are met in a timely and effective manner. 
-        </p>
-      </div>
-  
-      <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-        {#each data.services as service, i}
-        <a
-          class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
-          href="/services/digital-campaigns"
-        >
-
-        <img
-        alt="Flutter"
-        src={service.image}
-        class="mx-auto h-32 w-34 object-cover shadow-xl"
-      />
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10 text-pink-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M12 14l9-5-9-5-9 5 9 5z" />
-            <path
-              d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-            />
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-            />
-          </svg> -->
-  
-          <h2 class="mt-4 text-xl font-bold text-white">{service.name}</h2>
-  
-          <p class="mt-1 text-sm text-gray-300">
-           {service.description}
-          </p>
-        </a>
-
-        {/each}
-  
-      
-      </div>
-  
-      <div class="mt-12 text-center">
-        <a
-          href="#"
-          class="mt-8 inline-flex items-center rounded border border-blue-600 bg-blue-600 px-8 py-3 text-white hover:bg-transparent focus:outline-none focus:ring active:text-pink-500"
-        >
-          <span class="text-sm font-medium"> Get Started </span>
-  
-          <svg
-            class="ml-3 h-5 w-5"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
 
 
   

@@ -271,6 +271,11 @@ export default {
       image  : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/2346px-Android_logo_2019_%28stacked%29.svg.png" ,
       name : "Android",
       description : "Android App Development for Android Phones and Tablets"
+    },
+    {
+      image  : "https://www.freepnglogos.com/uploads/logo-website-png/logo-website-file-globe-icon-svg-wikimedia-commons-21.png" ,
+      name : "Website Development",
+      description : "Website Development for your business or personal use"
     }
   ]
 
